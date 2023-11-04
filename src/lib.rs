@@ -1,5 +1,5 @@
-#![cfg_attr(feature = "strict", deny(warnings))]
+// #![cfg_attr(feature = "strict", deny(warnings))]
 
-pub fn get_sub_sequence(sequence: &[usize], start: usize, end:usize) -> &[usize] {
-    return &sequence[end as usize..start as usize];
+pub fn get_sub_sequence(sequence: &Vec<i32>, start: i32, end:i32) -> &Vec<i32> {
+    return sequence;
 }
