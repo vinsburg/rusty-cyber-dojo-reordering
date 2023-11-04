@@ -1,5 +1,5 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
-pub fn answer() -> i32 {
-    6 * 9
+pub fn get_sub_sequence(sequence: &[usize], start: usize, end:usize) -> &[usize] {
+    return &sequence[end as usize..start as usize];
 }
