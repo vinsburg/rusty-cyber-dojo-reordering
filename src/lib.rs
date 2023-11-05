@@ -7,7 +7,7 @@ fn get_sub_sequence(seq: &Vec<i32>, start: usize, end: usize) -> &[i32] {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::get_sub_sequence;
     use std::vec::Vec;
 
     #[test]
