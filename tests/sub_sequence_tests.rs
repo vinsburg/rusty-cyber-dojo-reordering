@@ -16,3 +16,10 @@ fn should_get_slice_from_beginning() {
     let expected: Vec<i32> = vec![1];
     assert_eq!(&expected, reordering::get_sub_sequence(&seq, 0, 1));
 }
+
+#[test]
+fn should_get_slice_from_end() {
+    let seq: Vec<i32> = vec![1,2,3,4,5];
+    let expected: Vec<i32> = vec![5];
+    assert_eq!(&expected, reordering::get_sub_sequence(&seq, 4, 5));
+}
