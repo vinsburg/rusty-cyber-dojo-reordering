@@ -8,7 +8,6 @@ pub fn get_slice(seq: &Vec<i32>, start: usize, end: usize) -> &[i32] {
 #[cfg(test)]
 mod tests {
     use super::get_slice;
-    use std::vec::Vec;
 
     #[test]
     fn should_return_empty_sub_sequence() {

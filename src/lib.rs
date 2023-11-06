@@ -10,7 +10,6 @@ fn reorder(seq: &mut Vec<i32>, start: usize, end: usize, dest: usize) {
 #[cfg(test)]
 mod tests {
     use super::reorder;
-    use std::vec::Vec;
 
     #[test]
     fn should_reorder_empty_sub_sequence() {
