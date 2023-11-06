@@ -5,6 +5,11 @@ mod slice;
 #[allow(dead_code)]
 fn reorder(seq: &mut Vec<i32>, start: usize, end: usize, dest: usize) {
     println!("reorder: {:?}, {}, {}, {}", seq, start, end, dest);
+    let selected_seq = slice::get_slice(seq, start, end);
+    let remaining_seq = slice::get_slice(seq, end, seq.len());
+    let result: Vec<i32> = [remaining_seq, selected_seq].concat();
+    seq.clear();
+    seq.extend(result);
 }
 
 #[cfg(test)]
