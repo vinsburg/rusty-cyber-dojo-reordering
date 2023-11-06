@@ -19,4 +19,12 @@ mod tests {
         reorder(&mut seq, 0, 0, 0);
         assert_eq!(expected, seq);
     }
+
+    #[test]
+    fn should_move_first_member_to_second_place() {
+        let mut seq: Vec<i32> = vec![1, 2];
+        let expected: Vec<i32> = vec![2, 1];
+        reorder(&mut seq, 0, 1, 1);
+        assert_eq!(expected, seq);
+    }
 }
