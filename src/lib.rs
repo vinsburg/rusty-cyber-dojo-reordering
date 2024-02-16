@@ -30,32 +30,32 @@ mod tests {
 
     #[test]
     fn should_reorder_empty_sub_sequence() {
-        let mut seq: Vec<i32> = vec![1, 2];
-        let expected: Vec<i32> = vec![1, 2];
+        let mut seq: Vec<i32> = vec![0, 1];
+        let expected: Vec<i32> = vec![0, 1];
         reorder(&mut seq, 0, 0, 0);
         assert_eq!(expected, seq);
     }
 
     #[test]
     fn should_move_first_member_to_second_place() {
-        let mut seq: Vec<i32> = vec![1, 2];
-        let expected: Vec<i32> = vec![2, 1];
+        let mut seq: Vec<i32> = vec![0, 1];
+        let expected: Vec<i32> = vec![1, 0];
         reorder(&mut seq, 0, 1, 1);
         assert_eq!(expected, seq);
     }
 
     #[test]
     fn should_move_second_member_to_third_place() {
-        let mut seq: Vec<i32> = vec![1, 2, 3];
-        let expected: Vec<i32> = vec![1, 3, 2];
+        let mut seq: Vec<i32> = vec![0, 1, 2];
+        let expected: Vec<i32> = vec![0, 2, 1];
         reorder(&mut seq, 1, 2, 2);
         assert_eq!(expected, seq);
     }
 
     #[test]
     fn should_move_second_member_to_first_place() {
-        let mut seq: Vec<i32> = vec![1, 2, 3];
-        let expected: Vec<i32> = vec![2, 1, 3];
+        let mut seq: Vec<i32> = vec![0, 1, 2];
+        let expected: Vec<i32> = vec![1, 0, 2];
         reorder(&mut seq, 1, 2, 0);
         assert_eq!(expected, seq);
     }
