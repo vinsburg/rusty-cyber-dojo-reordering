@@ -67,4 +67,12 @@ mod tests {
         reorder(&mut seq, 1, 4, 8);
         assert_eq!(expected, seq);
     }
+
+    #[test]
+    fn should_move_1to3_to_2nd_position() {
+        let mut seq: Vec<i32> = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let expected: Vec<i32> = vec![0, 4, 1, 2, 3, 5, 6, 7, 8, 9];
+        reorder(&mut seq, 1, 4, 2);
+        assert_eq!(expected, seq);
+    }
 }
