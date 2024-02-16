@@ -37,7 +37,7 @@ mod tests {
     }
 
     #[test]
-    fn should_move_first_member_to_second_place() {
+    fn should_move_first_member_to_second_position() {
         let mut seq: Vec<i32> = vec![0, 1];
         let expected: Vec<i32> = vec![1, 0];
         reorder(&mut seq, 0, 1, 1);
@@ -45,7 +45,7 @@ mod tests {
     }
 
     #[test]
-    fn should_move_second_member_to_third_place() {
+    fn should_move_second_member_to_third_position() {
         let mut seq: Vec<i32> = vec![0, 1, 2];
         let expected: Vec<i32> = vec![0, 2, 1];
         reorder(&mut seq, 1, 2, 2);
@@ -53,10 +53,18 @@ mod tests {
     }
 
     #[test]
-    fn should_move_second_member_to_first_place() {
+    fn should_move_second_member_to_first_position() {
         let mut seq: Vec<i32> = vec![0, 1, 2];
         let expected: Vec<i32> = vec![1, 0, 2];
         reorder(&mut seq, 1, 2, 0);
+        assert_eq!(expected, seq);
+    }
+
+    #[test]
+    fn should_move_1to3_to_8th_position() {
+        let mut seq: Vec<i32> = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let expected: Vec<i32> = vec![0, 4, 5, 6, 7, 1, 2, 3, 8, 9];
+        reorder(&mut seq, 1, 4, 8);
         assert_eq!(expected, seq);
     }
 }
