@@ -1,7 +1,7 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
 #[allow(dead_code)]
-pub fn get_slice(seq: &Vec<i32>, start: usize, end: usize) -> Vec<i32> {
+pub fn get_slice<T: Clone>(seq: &Vec<T>, start: usize, end: usize) -> Vec<T> {
     seq[start..end].to_vec()
 }
 

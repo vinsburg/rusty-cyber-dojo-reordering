@@ -3,15 +3,15 @@
 mod slice;
 
 #[allow(dead_code)]
-fn reorder(seq: &mut Vec<i32>, start: usize, end: usize, dest: usize) {
-    let selected_seq: Vec<i32> = slice::get_slice(seq, start, end);
-    let before_seq: Vec<i32> = slice::get_slice(seq, 0, start);
-    let after_seq: Vec<i32> = slice::get_slice(seq, end, seq.len());
-    let remaining_seq: Vec<i32> = [before_seq, after_seq].concat();
+fn reorder<T: Clone>(seq: &mut Vec<T>, start: usize, end: usize, dest: usize) {
+    let selected_seq: Vec<T> = slice::get_slice(seq, start, end);
+    let before_seq: Vec<T> = slice::get_slice(seq, 0, start);
+    let after_seq: Vec<T> = slice::get_slice(seq, end, seq.len());
+    let remaining_seq: Vec<T> = [before_seq, after_seq].concat();
     let new_dest: usize = adjust_destination_index(dest, start, end);
-    let new_before_seq: Vec<i32> = slice::get_slice(&remaining_seq, 0, new_dest);
-    let new_after_seq: Vec<i32> = slice::get_slice(&remaining_seq, new_dest, remaining_seq.len());
-    let result: Vec<i32> = [new_before_seq, selected_seq, new_after_seq].concat();
+    let new_before_seq: Vec<T> = slice::get_slice(&remaining_seq, 0, new_dest);
+    let new_after_seq: Vec<T> = slice::get_slice(&remaining_seq, new_dest, remaining_seq.len());
+    let result: Vec<T> = [new_before_seq, selected_seq, new_after_seq].concat();
     seq.clear();
     seq.extend(result);
 }
