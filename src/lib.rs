@@ -5,9 +5,9 @@ mod slice;
 #[allow(dead_code)]
 fn reorder(seq: &mut Vec<i32>, start: usize, end: usize, dest: usize) {
     println!("reorder: {:?}, {}, {}, {}", seq, start, end, dest);
-    let selected_seq: Vec<i32> = slice::get_slice(seq, start, end).to_vec();
-    let before_seq: Vec<i32> = slice::get_slice(seq, 0, start).to_vec();
-    let after_seq: Vec<i32> = slice::get_slice(seq, end, seq.len()).to_vec();
+    let selected_seq: Vec<i32> = slice::get_slice(seq, start, end);
+    let before_seq: Vec<i32> = slice::get_slice(seq, 0, start);
+    let after_seq: Vec<i32> = slice::get_slice(seq, end, seq.len());
     let remaining_seq: Vec<i32> = [before_seq, after_seq].concat();
     let result: Vec<i32> = [remaining_seq, selected_seq].concat();
     seq.clear();
