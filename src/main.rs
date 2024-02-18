@@ -1,7 +1,12 @@
-use reordering::reorder;
+use reordering::{reorder, ReorderIndices};
 
 fn main() {
     let mut vec = vec!['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-    reorder(&mut vec, 1, 4, 8);
+    let inds: ReorderIndices = ReorderIndices {
+        start: 1,
+        end: 4,
+        dest: 8,
+    };
+    reorder(&mut vec, inds);
     println!("{:?}", vec);
 }
