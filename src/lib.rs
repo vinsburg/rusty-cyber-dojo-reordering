@@ -1,7 +1,6 @@
 #![cfg_attr(feature = "strict", deny(warnings))]
 
-#[allow(dead_code)]
-fn reorder<T>(seq: &mut Vec<T>, start: usize, end: usize, dest: usize) {
+pub fn reorder<T>(seq: &mut Vec<T>, start: usize, end: usize, dest: usize) {
     let removed: Vec<T> = seq.drain(start..end).collect();
     let dest = adjust_destination_index(dest, start, end);
     seq.splice(dest..dest, removed);
