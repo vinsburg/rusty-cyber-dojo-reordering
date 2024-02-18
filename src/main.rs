@@ -7,6 +7,11 @@ fn main() {
         end: 4,
         dest: 8,
     };
+    println!("Started with {:?}", seq);
+    println!(
+        "Moving items in range [{}-{}) to position {}",
+        inds.start, inds.end, inds.dest
+    );
     reorder(&mut seq, inds);
-    println!("{:?}", seq);
+    println!("Ended up with {:?}", seq);
 }
